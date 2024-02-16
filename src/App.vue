@@ -1,5 +1,8 @@
 <template>
-  <Estudiante />
+  <h1>Universidad Central del Ecuador (UCE)</h1>
+  <router-view></router-view>
+  <h2>Todos los derechos reservados</h2>
+  <!-- <Estudiante /> -->
 </template>
 
 <script>
