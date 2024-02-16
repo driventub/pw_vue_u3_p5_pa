@@ -15,6 +15,8 @@
         <div class="formInsertar">
             <h1>Inserción de Estudiantes</h1>
 
+            <label for="id">Id</label>
+            <input id="id" v-model="id" type="text" />
             <label for="nombre">Nombre</label>
             <input id="nombre" v-model="nombre" type="text" />
             <label for="apellido">Apellido</label>
@@ -27,6 +29,9 @@
             <input id="tel" v-model="telefono" type="text" />
 
             <button @click="insertar">Insertar</button>
+            <button @click="actualizar">Actualizar</button>
+            <button @click="eliminar">Eliminar</button>
+
         </div>
 
 
@@ -36,7 +41,7 @@
 </template>
 
 <script>
-import { consultarPorIdFachada, insertarFachada } from "../helpers/clienteEstudiantes"
+import { consultarPorIdFachada, insertarFachada, actualizarFachada, eliminarFachada, consultarTodosFachada } from "../helpers/clienteEstudiantes"
 
 
 export default {
@@ -83,6 +88,29 @@ export default {
             await insertarFachada(datos);
 
             console.log("Insertado!")
+        },
+
+        async actualizar() {
+            const datos = {
+                id: this.id,
+                nombre: this.nombre,
+                apellido: this.apellido,
+                genero: this.genero,
+                fechaNacimiento: this.fechaNacimiento,
+                semestre: "tercero",
+                afiliadoSeguro: false,
+                gratuidad: true,
+                nivelEconomico: "alto",
+                numTelefono: this.telefono,
+                domicilio: "Quito"
+            }
+            console.log(datos);
+
+            await actualizarFachada(this.id, datos);
+        },
+
+        async eliminar(){
+            eliminarFachada(this.id);
         }
     },
 }   
