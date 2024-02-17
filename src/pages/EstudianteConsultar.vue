@@ -3,7 +3,7 @@
         <div class="form">
             <h1>Estudiante Consultar</h1>
             <input v-model="id" type="number" />
-            <button @click="consultar">Consultar Por is</button>
+            <button @click="consultar">Consultar Por id</button>
         </div>
     </div>
 

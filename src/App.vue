@@ -1,19 +1,23 @@
 <template>
+  <NavBar/>
   <h1>Universidad Central del Ecuador (UCE)</h1>
   <router-view></router-view>
   <h2>Todos los derechos reservados</h2>
+
   <!-- <Estudiante /> -->
 </template>
 
 <script>
 
+import NavBar from './components/NavBar.vue';
 import Estudiante from './pages/EstudiantePage.vue'
 
 export default {
   name: 'App',
   components: {
 
-    Estudiante
+    Estudiante,
+    NavBar
   }
 }
 </script>
@@ -25,7 +29,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  
 }
 
 .container {

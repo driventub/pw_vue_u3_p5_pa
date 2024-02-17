@@ -1,30 +1,29 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import EstudiantesActualizar from "../pages/EstudianteActualizar.vue"
-import EstudiantesGuardar from "../pages/EstudianteGuardar.vue"
-import EstudiantesEliminar from "../pages/EstudianteEliminar.vue"
-import EstudiantesConsultar from "../pages/EstudianteConsultar.vue"
-
 const routes = [
-    {
-        path: '/actualizar',
-        component: EstudiantesActualizar
-    },
-    {
-        path: '/guardar',
-        component: EstudiantesGuardar
-    },
-    {
-        path: '/consultar',
-        component: EstudiantesConsultar
-    },
-    {
-        path: '/eliminar',
-        component: EstudiantesEliminar
-    },
-]
+  {
+    path: "/actualizar",
+    component: () => import("../pages/EstudianteActualizar.vue"),
+  },
+  {
+    path: "/guardar",
+    component:  () => import("../pages/EstudianteGuardar.vue"),
+  },
+  {
+    path: "/consultar",
+    component:  () => import("../pages/EstudianteConsultar.vue"),
+  },
+  {
+    path: "/eliminar",
+    component:  () => import("../pages/EstudianteEliminar.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component:  () => import("../pages/NotFoundPage.vue"),
 
+  },
+];
 
-const router = createRouter({history: createWebHashHistory(), routes})
+const router = createRouter({ history: createWebHashHistory(), routes });
 
-export default router
+export default router;
