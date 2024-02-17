@@ -27,4 +27,27 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.form {
+    margin-top: 2rem;
+    display: grid;
+    padding: 1rem;
+    background-color: #dda15e;
+    border-radius: 2rem;
+
+}
+
+label {
+    text-align: left;
+}
+
+input {
+    background-color: #fefae0;
+}
 </style>

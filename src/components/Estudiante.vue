@@ -1,19 +1,11 @@
 <template>
-    <div class="container">
-        <div class="formInsertar">
-            <h1>Consulta por Estudiantes</h1>
-            <input v-model="id" type="number" />
-            <button @click="consultarPorId">Consultar</button>
-
-        </div>
-    </div>
 
     <div class="container">
 
 
 
-        <div class="formInsertar">
-            <h1>Inserción de Estudiantes</h1>
+        <div class="form">
+
 
             <label for="id">Id</label>
             <input id="id" v-model="id" type="text" />
@@ -69,26 +61,7 @@ export default {
 
         },
 
-        async insertar() {
-            console.log("Insertando....");
-            const datos = {
-
-                "nombre": this.nombre,
-                "apellido": this.apellido,
-                "genero": this.genero,
-                "fechaNacimiento": this.fechaNacimiento,
-                "semestre": "tercero",
-                "afiliadoSeguro": false,
-                "gratuidad": true,
-                "nivelEconomico": "alto",
-                "numTelefono": this.telefono,
-                "domicilio": "Quito"
-            }
-
-            await insertarFachada(datos);
-
-            console.log("Insertado!")
-        },
+       
 
         async actualizar() {
             const datos = {
@@ -113,30 +86,16 @@ export default {
             eliminarFachada(this.id);
         }
     },
+    props:{
+        datos : {
+            type: {
+
+            }
+        }
+    }
 }   
 </script>
 
 <style scoped>
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
 
-.formInsertar {
-    margin-top: 2rem;
-    display: grid;
-    padding: 1rem;
-    background-color: #dda15e;
-    border-radius: 2rem;
-
-}
-
-label {
-    text-align: left;
-}
-
-input {
-    background-color: #fefae0;
-}
 </style>

@@ -3,7 +3,7 @@
         <div class="form">
             <h1>Pagina Eliminar</h1>
             <input v-model="id" type="number" />
-            <button @click="consultarPorId">Eliminar</button>
+            <button @click="eliminar">Eliminar</button>
         </div>
 
     </div>
