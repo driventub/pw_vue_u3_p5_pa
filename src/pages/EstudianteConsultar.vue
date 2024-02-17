@@ -43,6 +43,13 @@ export default {
 
         }
     },
+    created() {
+        console.log(this.$route.params.id);
+        console.log(this.$route.query.anio);
+        this.id = this.$route.params.id;
+        this.consultar();
+        
+    },
 }
 </script>
 
